@@ -73,3 +73,12 @@ btn6.addEventListener("click", alertFunctionButton6);
     function alertFunctionButton6() {
         alert("This is button 6 calling!");
     }
+
+// ---------------------------------------
+// ---------------------------------------
+
+// Passing parameters to the eventListener
+const btn7 = document.querySelector("#btn-7");
+btn7.addEventListener("click", function(e) {
+    e.target.style.background = "blue";
+});
