@@ -34,3 +34,42 @@ pinkContainer.appendChild(paragraph2);
 
 container.appendChild(pinkContainer);
 
+// Add Events-related DOM manipulations to container2
+
+// This is method-2 where we use arrow function
+// Note that we can't make this event do more things
+const btn = document.querySelector("#btn");
+btn.onclick = () => alert("Hello World!");
+
+// This is method-3, it is preferrable over others
+const btn3 = document.querySelector("#btn-3");
+btn3.addEventListener("click", () => {
+    alert("Hello, World!");
+    btn3.style.backgroundColor = "red";
+});
+
+// ----------------------------------------
+// ---------------------------------------
+
+// Now let's briefly demonstrate that all three methods can also have named functions instead of anonymous functions
+
+// Button-4 triggers this. It uses embedded HTML method (as shown in method-1)
+function alertFunctionButton4() {
+    alert("This  button 4 calling!");
+}
+
+// Button-5 triggers this. It uses method-2.
+const btn5 = document.querySelector("#btn-5");
+btn5.onclick = alertFunctionButton5;
+
+    function alertFunctionButton5() {
+        alert("This is button 5 calling!");
+    }
+
+// Button-6 triggers this. It uses method-3.
+const btn6 = document.querySelector("#btn-6");
+btn6.addEventListener("click", alertFunctionButton6);
+
+    function alertFunctionButton6() {
+        alert("This is button 6 calling!");
+    }
